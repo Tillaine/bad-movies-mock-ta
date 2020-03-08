@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class Search extends React.Component {
   constructor(props) {
     super(props)
@@ -20,9 +21,8 @@ class Search extends React.Component {
         {/* Make the select options dynamic from genres !!! */}
         {/* How can you tell which option has been selected from here? */}
 
-        <select>
-          <option value="theway">The Way</option>
-          <option value="thisway">This Way</option>
+        <select onChange={this.props.handleGenreSelect}>
+          {this.props.genres.map(genre => <option key={genre.id} value={genre.id}>{genre.name}</option>)}
           <option value="thatway">That Way</option>
         </select>
         <br/><br/>

@@ -25,3 +25,7 @@ https://developers.themoviedb.org/3/getting-started/introduction
 --------
 
 *To start the server and start webpack check out package.json*
+
+
+<!-- get genra list: /genre/movie/list -->
+

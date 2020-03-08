@@ -1,11 +1,20 @@
 const movieModel = require('../models/movieModel.js');
 const apiHelpers = require('../helpers/apiHelpers.js');
+var request = require('request')
 
 //Return requests to the client
 module.exports = {
   getSearch: (req, res) => {
+    console.log('request#######', req.body)
     // get the search genre     
-
+    return new Promise((resolve, reject) => {
+      console.log('######helper', apiHelpers)
+      request(apiHelpers.getMoviesAPI(req.body), (err, response) => {
+        if (err) { reject(err) } 
+        else {resolve(response) }
+      })
+      
+    })
     // https://www.themoviedb.org/account/signup
     // get your API KEY
 

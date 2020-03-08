@@ -59,6 +59,7 @@ html, body, #app {
   padding: 10px;
 }
 
+
 .movies {
   flex-basis:80%;
   display: flex;

@@ -43,11 +43,16 @@ class App extends React.Component {
   }
 
   handleGenreSelect(e) {
-    console.log(e.target.value)
+    console.log(this.state.genres)
     fetch(`http://localhost:3000/search?id=${e.target.value}`)
-    .then(moviesData => {
-      console.log('movies', moviesData.json())
+    .then(moviesData =>  moviesData.json()
+    )
+    .then(movies => {
+      console.log('movies', movies.results)
+     this.setState({movies: movies.results})
+    
     })
+      
     // make a get request to themoviedb with genre
   }
 
